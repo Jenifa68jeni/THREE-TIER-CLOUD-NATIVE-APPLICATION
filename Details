@@ -1,0 +1,49 @@
+# PROJECT DETAILS
+
+| Item                | Details                                                                 |
+|---------------------|-------------------------------------------------------------------------|
+| **Project Title**   | Three-Tier Cloud-Native Application (Angular + Spring Boot + MySQL RDS) |
+| **Domain**          | Cloud-Native Application / DevOps Automation                            |
+| **Application Type**| Frontend (Angular) + Backend (Spring Boot API) + Database (MySQL RDS)   |
+| **Source Code Repo**| GitHub – Products API (https://github.com/suffixscope/01_products_api.git) |
+| **Deployment Target**| Kubernetes Deployment on Amazon EKS                                    |
+| **Cloud Platform**  | AWS (RDS for DB, EKS for backend, S3/CloudFront for frontend)           |
+| **Pipeline Tool**   | Jenkins (Master-Slave Architecture)                                     |
+| **Build Tool**      | Apache Maven                                                           |
+| **Containerization**| Docker                                                                 |
+| **Orchestration**   | Kubernetes (Amazon EKS)                                                |
+| **Artifact Repo**   | Docker Hub                                                             |
+
+---
+
+## 🔹 Tool Versions
+- MySQL (AWS RDS): **8.4.x** (latest supported version)  
+- Jenkins: **2.x**  
+- Maven: **3.x**  
+- Docker: **25.x**  
+- Kubectl / AWS CLI / Eksctl: Latest stable versions  
+
+---
+
+##  Objective
+Implement a complete **three-tier cloud-native application** with CI/CD automation:
+
+- **Frontend (Angular)** → Customer-facing UI hosted separately (e.g., S3 + CloudFront).  
+- **Backend (Spring Boot API)** → Business logic containerized and deployed on EKS.  
+- **Database (MySQL RDS)** → Managed relational database for persistent storage.  
+
+Pipeline automates:
+1. Clone source code from GitHub.  
+2. Build backend with Maven.  
+3. Create Docker image.  
+4. Push image to Docker Hub.  
+5. Deploy to Kubernetes (EKS).  
+6. Verify pods, services, and application access via LoadBalancer.  
+
+---
+
+## 🔹 End Result
+- Customers interact with the **Angular frontend**.  
+- Frontend communicates with the **Spring Boot backend**.  
+- Backend fetches and stores data in **MySQL RDS**.  
+- CI/CD pipeline ensures seamless build, containerization, and deployment.  
