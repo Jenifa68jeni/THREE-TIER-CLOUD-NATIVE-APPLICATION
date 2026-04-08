@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: three-tier-app
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: three-tier-app
+  template:
+    metadata:
+      labels:
+        app: three-tier-app
+    spec:
+      containers:
+      - name: three-tier-app
+        image: your-dockerhub-username/three-tier-app:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:mysql://jenifa-db.cjqsqwumim0r.ap-south-1.rds.amazonaws.com:3306/jenifa_db
+        - name: SPRING_DATASOURCE_USERNAME
+          value: jenifa
